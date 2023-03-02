@@ -1,0 +1,25 @@
+html,
+body {
+  height: 100%;
+}
+/* Всички тагоне, които са над тага, който искаме да сетнем на height: 100%, трябва да има и те height: 100% за да се получи. В случая над body тага, имаме html таг, който също трябва да се сетне на 100%. */
+
+.nice-box {
+  width: 200px;
+  height: 200px;
+  border: 5px solid red;
+  padding: 5px 10px 15px 20px;
+  margin: 20px 10px 28px 5px;
+  /* display: inline-block; */
+}
+
+.first {
+  height: 100%;
+  width: 50%;
+  box-sizing: border-box;
+  /* По подразбиране box-sizing е сетнато на content-box. content-box измерва размера на елементите без да включва в него падинга и маржинга. Ако искаме размерите, които даваме да включват и падинга и маржинга, тогава трябва да зададем box-sizing: border-box. */
+}
+
+.first:hover {
+  background: green;
+}

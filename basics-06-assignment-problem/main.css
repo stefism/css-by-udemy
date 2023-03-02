@@ -1,0 +1,23 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+
+#assignment-instructions {
+  color: red;
+  font-family: sans-serif;
+}
+
+code {
+  color: red;
+  /* font-family: inherit; */
+}
+
+.green-color {
+  color: rgb(39, 10, 231);
+}
+
+/* li + li {
+  background-color: black;
+  color: white;
+} */
+/* li + li - селектирай всеки li, който стои под друг li. Така решаваме задача 6 */
