@@ -10,7 +10,7 @@ body {
   border: 5px solid red;
   padding: 5px 10px 15px 20px;
   margin: 20px 10px 28px 5px;
-  /* display: inline-block; */
+  display: inline-block;
 }
 
 .first {
@@ -22,4 +22,9 @@ body {
 
 .first:hover {
   background: green;
+}
+
+div:last-of-type:hover {
+  border-color: blue;
+  /* Ще селектира последния от поредица дивове и ще му приложи ховер ефект. */
 }
