@@ -1,0 +1,58 @@
+main {
+  margin-top: 32px;
+}
+
+.section-title {
+  background: #e0f3c3;
+  width: 800px;
+  border: 5px solid green;
+  border-left: none;
+  padding: 50px;
+  margin: 10px 0px;
+}
+
+.section-title:hover {
+  border: 5px solid red;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.free {
+  background: #60e060;
+  border: 5px solid green;
+  border-right: none;
+  text-align: right;
+  float: right; /* Използва се за позициониране на елементи на място различно от цялостния документ флоу. Подходящо е за картинка, която останалите елементи от страницата обграждат. Овъррайдваме текущата позиция и казваме на браузъра да позиционира елемента от ляво или от дясно на страницата.
+  В нашия случай не искаме останалите елементи от страницата да обграждат кутията на free плана, която искаме да позиционираме от дясно. За да стане това, правим div елемент, след елемента, който сме флотнали и му казваме clear: both; */
+}
+
+.clearfix {
+  clear: both; /* Това означава, всички елементи след този, да не се съобразяват с предишния float. Така го хакваме за да не ображда долния елемент (премиум плана) - горния. (безплатния план) */
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-title__h1 {
+  color: #464747;
+}
+
+.section-title__h2 {
+  color: darkgrey;
+}
+
+.section-title__p {
+  background: white;
+  padding: 20px;
+  border: 2px solid green;
+  color: green;
+  font-size: 20px;
+}
+
+.premium {
+  background: #029602;
+}
+
+.premium .section-title__h1 {
+  color: white;
+}
