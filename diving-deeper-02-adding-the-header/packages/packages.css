@@ -1,14 +1,37 @@
 main {
-  margin-top: 32px;
+  margin-top: 70px;
+}
+
+.background {
+  background: url("../images/plans-background.jpg");
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: -1; /* z-index може да се прилага само за елементи, на които пропертито position е различно от дефолтното, което е static. fixed и absolute position изваждат елементите от флоула на страницата. fixed се позиционира спрямо видимата част на страницата. position се позиционира в зависимост. (виж коментара по-долу на position: absolute;) */
 }
 
 .section-title {
+  position: relative; /* position: relative не изважда елемента от флоула на страницата. В случая го ползваме за да може спрямо него, да позиционираме .badge елемента. Също така, когато дадем на елемент position: relative, той може да се мести спрямо него си самия с указването на top, bottom, left, right пропертитата, без да е необходимо над него да има друг елемент с приложена позиция. Ако е дете на друг еелемент, той може да излезне извън парент елемента и да се вижда, че е излазъл извън него. За да не се вижда, че е излазъл извън парент елемента си, на парент елемента му, трябва да дадем проперти overflow: hidden. Ако приложим overflow: hidden на body тага, няма да има ефект. Трябва да приложим overflow: hidden и на html тага за да проработи overflow: hidden и на body тага. */
   background: #e0f3c3;
   width: 800px;
   border: 5px solid green;
   border-left: none;
   padding: 50px;
   margin: 10px 0px;
+}
+
+.badge {
+  position: absolute;
+  /* position: absolute - ако няма обграждащи го над него елементи, като например ако не е сложен в div таг, елемента се позиционира спрямо html тага. Ако е вложен в друг таг елемент на който има приложено проперти position, което е различно от дефолтното, той се позиционира спрямо него. */
+  font-size: 12px;
+  color: white;
+  background: red;
+  top: 0px;
+  right: 0px;
+  margin: 20px;
+  padding: 8px;
 }
 
 .section-title:hover {
