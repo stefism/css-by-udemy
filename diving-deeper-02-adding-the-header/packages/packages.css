@@ -3,7 +3,11 @@ main {
 }
 
 .background {
-  background: url("../images/plans-background.jpg");
+  /* background: url("../images/plans-background.jpg"); */
+  background: url("../images/plans-background.jpg") center/cover;
+  /* Можем да задаваме филтри като яркост, контраст и други. Мега яко. */
+  filter: grayscale(100%);
+  filter: grayscale(40%);
   position: fixed;
   width: 100%;
   height: 100%;

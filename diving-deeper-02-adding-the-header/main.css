@@ -8,20 +8,57 @@ body {
 }
 
 #product-overview {
-  background: url("freedom.jpg");
+  position: relative;
+  z-index: -1;
+  /* background: url("freedom.jpg"); */
+  background-image: linear-gradient(to left bottom, red, blue);
+  background-image: linear-gradient(30deg, red -10%, green 70%, yellow, orange);
+  /* background-image: linear-gradient(30deg, red, transparent); */
+  /* background-image: radial-gradient(red, transparent); */
+  /* background-image: radial-gradient(circle at top right, red, transparent); */
+  background-image: radial-gradient(ellipse 20px 30px at 20% 50%, red, green);
+  background-image: radial-gradient(
+    ellipse farthest-side at 20% 50%,
+    red,
+    green
+  );
+  /* farthest-side - това означава, че последния цвят на градиента ще се разтегли до -най-далечната граница- на елемента на който градиента е приложен. 
+   - Можем да зададем и closest-side. Тогава последният цвят на градиента ще се разтегли до -най-бизката граница- на елемента на който градиента е приложен. 
+   - closest-corner - до най-бизкия ъгъл. 
+   - farthest-corner - до най-далечния ъгъл. */
+  /* background-image: radial-gradient(circle at 20% 50%, red, transparent); */
+  background-size: cover;
+  /* background-position: 0px -100px; */
+  /* Първата стойност контролира хоризонталното изместване, втората - ертикалното. */
   width: 100%;
   height: 528px;
   padding: 10px;
+  margin-top: 30px;
+}
+
+/* Можем да задаваме повече от едно изображение за фон елемента, както и повече от един цвят или градиент и да ги наслагваме едно върху друго. */
+#product-overview {
+  background: linear-gradient(to top, rgba(80, 68, 18, 0.6) 10%, transparent),
+    url("freedom.jpg"), red;
+
+  background-size: cover;
+
+  width: 100%;
+  height: 528px;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+#product-overview h1 {
+  position: absolute;
+  bottom: 0px;
+  color: white;
+  font-family: "Anton", sans-serif;
 }
 
 .section-title {
   color: #2ddf5c;
   text-align: center;
-}
-
-#product-overview h1 {
-  color: white;
-  font-family: "Anton", sans-serif;
 }
 
 .plan {
@@ -127,6 +164,7 @@ ul {
   border: 2px solid #424242;
   border-radius: 50%;
   margin: auto; /* Центрира елементите хоризонтално */
+  padding: 20px;
 }
 
 .key-feature__description {
@@ -145,6 +183,8 @@ ul {
   background: #2ddf5c;
   padding: 8px 16px;
   position: fixed;
+  top: 0px;
+  left: 0px;
 }
 
 .main-header > div {
@@ -157,6 +197,11 @@ ul {
   text-decoration: none;
   font-weight: bold;
   font-size: 22px;
+}
+
+.main-header__brand img {
+  height: 40px;
+  vertical-align: middle;
 }
 
 .main-nav {
