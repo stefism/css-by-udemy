@@ -1,6 +1,8 @@
 .testimonial {
-  font-size: 20px;
-  margin: 48px 0;
+  font-size: 1.2rem; /* rem - взима големината на шрифта по подразбиране, която е зададена на най-главния елемент (html) и я умножава по някаква стойност. Въпросната дефолтна големина на шрифта на най-главния елемент може да се задава от настройките на браузъра - Font size. Medium е 16px. 1.2rem ще умножи 16 х 1.2 и ще даде пикселите на елемента. Прави се с цел за да може, ако потребителя въведе различна големина на шрифта от настройките на браузъра, всички шрифтове да се съобразят с това. Ако големината на шрифта е зададена в пиксели, той се си остане със същата големи на пискелите, ако потребителя промени големината на шрифта от настройките на браузъра.
+  
+  От своя страна "em" мерната единица, взима размера на обграждащия го елемент и умножава по стойноста чайл елемента. Използва се по-рядко. */
+  margin: 3rem 0; /* Може да се ползва за оразмеряване на всеки един елемент, но винаги взива големината на шрифта на html елемента като отправна точка. */
 }
 
 .testimonial__list {
@@ -9,11 +11,12 @@
 }
 
 .testimonial:first-of-type {
-  margin-top: 96px;
+  margin-top: 6rem;
 }
 
 .testimonial__image-container {
   width: 65%;
+  max-width: 580px;
   display: inline-block; /* За да може img тага да се витне със width: 100%; спрямо обграждащия го контейнер, трябва да направим контейнера, който в случая е div таг, от инлайн, на inline-block. */
   vertical-align: middle;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
@@ -26,7 +29,7 @@
 
 .testimonial__info {
   text-align: right;
-  padding: 14px;
+  padding: 0.9rem;
   display: inline-block;
   vertical-align: middle;
   width: 25%;
@@ -41,13 +44,14 @@
 }
 
 .testimonial__name {
-  margin: 3px;
+  margin: 0.2rem;
   color: #ff5454;
+  font-size: 2rem;
 }
 
 .testimonial__subtitle {
   margin: 0;
-  font-size: 18px;
+  font-size: 1.1rem;
   color: #ccc;
 }
 
@@ -62,5 +66,5 @@
 }
 
 .testimonial__text {
-  margin: 3px;
+  margin: 0.2rem;
 }
