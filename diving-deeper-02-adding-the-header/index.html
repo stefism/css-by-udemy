@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Това го правим за да може като превключим от девелопер тулса на мобилно устройсто, да се показва правилно как ще изглежда страницата на мобилното устройство. -->
+
     <title>uHost</title>
     <link rel="shortcut icon" href="favicon.png" />
     <link
@@ -14,11 +18,32 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
 
   <body>
+    <div class="backdrop"></div>
+
+    <div class="modal">
+      <h1 class="modal__title">Do you want to continue?</h1>
+      <div class="modal__actions">
+        <a href="start-hosting/index.html" class="modal__action">Yes!</a>
+        <button class="modal__action modal__action--negative" type="button">
+          No!
+        </button>
+      </div>
+    </div>
+
     <header class="main-header">
       <div>
+        <button class="toggle-button">
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+          <span class="toggle-button__bar"></span>
+        </button>
         <a href="index.html" class="main-header__brand">
           <img src="images/uhost-icon.png" alt="image" />
         </a>
@@ -37,6 +62,20 @@
         </ul>
       </nav>
     </header>
+
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__items">
+        <li class="mobile-nav__item">
+          <a href="packages/index.html">Packages</a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="customers/index.html">Customers</a>
+        </li>
+        <li class="mobile-nav__item mobile-nav__item--cta">
+          <a href="start-hosting/index.html">Start Hosting</a>
+        </li>
+      </ul>
+    </nav>
 
     <main>
       <section id="product-overview">
@@ -503,5 +542,6 @@
         </ul>
       </nav>
     </footer>
+    <script src="shared.js"></script>
   </body>
 </html>
