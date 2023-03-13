@@ -1,3 +1,4 @@
+/* Версия за мобилно устройство. Използваме подхода mobile device first. */
 * {
   box-sizing: border-box;
 }
@@ -63,24 +64,12 @@ body {
   margin-top: 10px;
 }
 
-@media (min-width: 40rem) {
-  #product-overview {
-    background-position: 80px -180px;
-  }
-}
-
 #product-overview h1 {
   position: absolute;
   bottom: 0px;
   color: white;
   font-family: "Anton", sans-serif;
   font-size: 1.6rem;
-}
-
-@media (min-width: 40rem) {
-  #product-overview h1 {
-    font-size: 3rem;
-  }
 }
 
 .section-title {
@@ -92,22 +81,14 @@ body {
   background: #d5ffdc;
   text-align: center;
   padding: 16px;
-  margin: 8px;
-  display: inline-block;
-  width: 30%;
-  vertical-align: middle;
+  margin: 8px 0;
+  width: 100%;
 }
 
 .plan--highlighted {
   background: #19b84c;
   color: white;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-.plan_list {
-  text-align: center;
-  width: 80%;
-  margin: auto; /* Когато искаме да центрираме елементи на страницата, слагаме ги в div и даваме margin: auto. */
 }
 
 .plan__annotation {
@@ -132,6 +113,10 @@ body {
 
 .plan--highlighted .plan__price {
   color: #0e4f1f;
+}
+
+.premium {
+  margin-bottom: 100px;
 }
 
 ul li {
@@ -257,7 +242,7 @@ ul {
 .main-nav {
   display: inline-block;
   text-align: right;
-  width: calc(100% - 122px);
+  width: calc(100% - 45px);
   vertical-align: middle;
 }
 
@@ -284,6 +269,7 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: none;
 }
 
 .main-nav__item--cta a,
@@ -306,12 +292,21 @@ ul {
   background: black;
   padding: 32px;
   margin-top: 48px;
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  bottom: 0px;
+}
+
+.main-footer nav {
+  vertical-align: middle;
 }
 
 .main-footer__links {
   margin: 0;
   padding: 0;
   text-align: center;
+  vertical-align: middle;
 }
 
 .main-footer__link {
@@ -406,4 +401,63 @@ ul {
 
 .mobile-nav__item a {
   font-size: 1.5rem;
+}
+
+/* Версия за компютър */
+/* @media (min-width: 40rem) and (min-height: 60rem) {} - може и така. Тогава условието ще се изпълни ако резолюцията е в тези граници. */
+@media (min-width: 40rem) and (orientation: portrait) {
+}
+@media (min-width: 40rem), (orientation: portrait) {
+} /* Ако едно от двете условия е изпълнено. */
+
+@media (min-width: 40rem) {
+  .main-nav__items {
+    display: inline-block;
+  }
+
+  .toggle-button {
+    display: none;
+  }
+
+  #product-overview {
+    background-position: 80px -180px;
+  }
+
+  #product-overview h1 {
+    font-size: 3rem;
+  }
+
+  .plan_list {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    /* Когато искаме да центрираме елементи на страницата, слагаме ги в div и даваме margin: auto. */
+  }
+
+  .plan {
+    display: inline-block;
+    width: 30%; /* Ако приложим само display: inline-block; няма да се случи нищо, защото по-нагоре, в css-а за мобилно устройство сме казали width: 100%; Няма как да станат едно до друго при това положение. Трябва да променим и width за да се получи.*/
+    vertical-align: middle;
+    min-width: 13rem;
+    max-width: 23.3rem;
+  }
+}
+
+@media (min-width: 40rem) and (orientation: landscape) {
+  #product-overview {
+    background-position: 0px -180px;
+    height: 250px;
+  }
+
+  #product-overview h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 29rem) {
+  .key-feature {
+    display: block;
+    margin: auto;
+    width: 100%;
+  }
 }
