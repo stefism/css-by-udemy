@@ -1,0 +1,74 @@
+main {
+  padding-top: 1rem;
+}
+
+.signup-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: red;
+}
+
+.signup-form {
+  padding: 1rem;
+}
+
+.signup-form label,
+.signup-form input,
+.signup-form select {
+  display: block;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* 
+.signup-form input[type="checkbox"] - ще селектира input елемент, който се намира в елемент с клас signup-form и който има приложен атрибут type="checkbox" 
+.signup-form input[id*="terms"] - ще селектира input елемент чието id съдържа стринга terms.
+*/
+
+.signup-form input[id*="terms"],
+.signup-form input[id*="terms"] + label {
+  /* + label - елемента, директно следван от елемент label */
+  display: inline-block;
+  vertical-align: middle;
+  margin: 20px 0px 0px 0px;
+  width: auto;
+}
+
+.signup-form input:not([type="checkbox"]), /* Ще селектира всички input полета в елемента с това id, чиито тип обаче не е checkbox. Не искаме да приложим тези стилове на чек бокса. */
+.signup-form select {
+  border: 1px solid #ccc;
+  padding: 0.2rem 0.5rem;
+  font: inherit;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+  outline: none;
+  background: rgba(196, 235, 213, 0.678);
+  border-color: rgb(66, 231, 88);
+}
+
+.signup-form input[type="checkbox"] {
+  border: 1px solid #ccc;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.signup-form button[type="submit"] {
+  display: block;
+  margin-top: 1rem;
+}
+
+/* Браузъра автоматично детектва invalid псевдо класа и ако има зададени стилове, ги прилага, ако написано в полето е невалидно. Става въпрос за полета с дефинирани типове, например type="email". */
+.signup-form input:invalid,
+.signup-form select:invalid {
+  background: rgb(243, 189, 200);
+  border-color: rgb(231, 66, 88);
+}
+
+@media (min-width: 40rem) {
+  .signup-form {
+    margin: auto;
+    width: 25rem;
+  }
+}
