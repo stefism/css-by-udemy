@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,900');
-@import url('https://fonts.googleapis.com/css?family=Anton');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400,900");
+@import url("https://fonts.googleapis.com/css?family=Anton");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 
 * {
   box-sizing: border-box;
@@ -35,12 +35,16 @@ main {
   background: #2ddf5c;
   padding: 0.5rem 1rem;
   z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.main-header > div {
+/* .main-header > div {
   display: inline-block;
   vertical-align: middle;
-}
+} */ /* Това не ни трябва, защото вече .main-header > div е вътре във флекс контейнера. */
 
 .toggle-button {
   width: 3rem;
@@ -68,14 +72,18 @@ main {
   color: #0e4f1f;
   text-decoration: none;
   font-weight: bold;
-  height: 2.5rem;
+  /* height: 2.5rem; */
   /* width: 20px; */
-  display: inline-block;
-  vertical-align: middle;
+
+  /* display: inline-block;
+  vertical-align: middle; */ /* Това също не ни трябва, защото вече .main-header > div е вътре във флекс контейнера. */
 }
 
 .main-header__brand img {
   height: 100%;
+
+  height: 2.5rem;
+  vertical-align: middle;
   /* width: 100%; */
 }
 
@@ -87,10 +95,13 @@ main {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  display: flex;
+  /* justify-content: flex-end; */
 }
 
 .main-nav__item {
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0 1rem;
 }
 
@@ -131,10 +142,11 @@ main {
   }
 
   .main-nav {
-    display: inline-block;
+    /* display: inline-block;
     text-align: right;
     width: calc(100% - 44px);
-    vertical-align: middle;
+    vertical-align: middle; */
+    display: flex;
   }
 }
 
@@ -148,12 +160,15 @@ main {
   list-style: none;
   margin: 0;
   padding: 0;
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-footer__link {
-  display: block;
-  margin: 1rem 0;
+  /* display: block; */
+  margin: 0.5rem 0;
 }
 
 .main-footer__link a {
@@ -181,9 +196,13 @@ main {
   width: 90%;
   height: 100%;
   list-style: none;
-  margin: 10% auto;
   padding: 0;
-  text-align: center;
+  /* margin: 10% auto;
+  text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-nav__item {
@@ -220,15 +239,19 @@ main {
   border: #a1a1a1;
   background: #ccc;
   color: #a1a1a1;
-} 
+}
 
 .open {
-    display: block !important;
+  display: block !important;
 }
 
 @media (min-width: 40rem) {
   .main-footer__link {
-    display: inline-block;
     margin: 0 1rem;
+  }
+
+  .main-footer__links {
+    flex-direction: row;
+    justify-content: center;
   }
 }
