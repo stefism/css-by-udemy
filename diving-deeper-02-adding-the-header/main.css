@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Quicksand:wght@400;500;600;700&family=Roboto:wght@300;400;700&display=swap"); /* По-добре е шрифтовете да се изпортват в CSS-а, вместо да се слагат като линк на всяка html страница. */
+
 /* Версия за мобилно устройство. Използваме подхода mobile device first. */
 * {
   box-sizing: border-box;
