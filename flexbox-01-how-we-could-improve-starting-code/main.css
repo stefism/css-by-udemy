@@ -158,6 +158,12 @@
     max-width: 25rem;
     vertical-align: top;
   }
+
+  .key-feature__list {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+  }
 }
 
 /* h1 {
