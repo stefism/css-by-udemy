@@ -1,0 +1,35 @@
+.container {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 200px 150px 20% 1fr; /* 1fr - това е фракция. Ще нарави 4та колона, която ще заеме останалото празно пространство от контейнера. Останалото празно пространство, което остава е 200px - 150px - 20% */
+  grid-template-columns: repeat(4, 25%); /* Ще направи 4 колони по 25%. */
+  grid-template-columns: 200px 2fr 20% 1fr; /* Втората колона ще заема 2 пъти повече място от останалото празно пространство от първата. (Две фракции.) */
+  grid-template-rows: 5rem 2.5rem;
+  grid-template-rows: [row-one-start] 5rem minmax(10px, 200px); /* [row-one-start] - име на реда, което ние си измисляме. */
+  grid-column-gap: 20px; /* Разстояние между колоните. Ако някой елемент заема 2 колони, не се разделя от гапа. */
+  grid-row-gap: 10px; /* Като горното, но за редовете. */
+  grid-gap: 20px 10px; /* Кратък запис на горните две пропертита. */
+}
+
+.el1 {
+  background: rgba(255, 154, 72, 0.5);
+}
+
+.el2 {
+  background: rgba(255, 0, 0, 0.5);
+}
+
+.el3 {
+  background: rgba(0, 128, 0, 0.5);
+  /* grid-column-start: 3;
+  grid-column-end: 5; */
+  grid-column: 3 / 5; /* Кратък запис на горните две пропертита. */
+  grid-column-end: span 2; /* Казва на елемента да заеме 2 клетки от грида. */
+  grid-row-start: row-one-start; /* Тук използваме името на реда, което сме задали по-горе. */
+  grid-row: span 2 / row-one-start; /* Кратък запис на горните две пропертита. */
+  grid-row-end: 3;
+}
+
+.el4 {
+  background: rgba(0, 4, 255, 0.5);
+}

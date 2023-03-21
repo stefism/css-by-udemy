@@ -1,0 +1,40 @@
+.grid-container {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.header,
+.sidebar,
+.main-content,
+.footer {
+  background: cadetblue;
+  color: white;
+}
+
+.header {
+  height: 50px;
+  margin-bottom: 20px;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+}
+
+.sidebar {
+  height: 250px;
+  min-width: 150px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.main-content {
+  height: 250px;
+  margin-bottom: 20px;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+.footer {
+  height: 50px;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+}
